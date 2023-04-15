@@ -1,0 +1,22 @@
+# This is your main playbook you will run with:
+---
+- name: apply common configuration to all nodes
+  hosts: suecyde
+  gather_facts: false
+  become: yes
+
+  roles:
+     - essential-setup
+     - directory-setup
+     - pacman-packages
+     - aur-packages
+     - display-manager-sddm
+     - xorg-setup
+     - i3-setup
+     - amd-gpu-setup
+     - terminal-setup-alacritty
+     - qemu-setup
+     - polybar
+     - gpu-passthru
+     - fancontrol
+     - reboot-role
